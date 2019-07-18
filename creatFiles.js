@@ -23,7 +23,7 @@ let fileContent = `
 `
 
 let initData = {
-    projectName: 'demo1',
+    projectName: 'creatFiles-resule',
     data: [
         {
             name: 'img',

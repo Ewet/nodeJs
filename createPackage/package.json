@@ -11,5 +11,7 @@
   "devDependencies": {
     "art-template": "^4.13.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "t-charts": "^1.2.6"
+  }
 }
