@@ -1,0 +1,9 @@
+{
+    ".css": "text/css",
+    ".doc": "application/msword",
+    ".html": "text/html",
+    ".js": "text/javascript",
+    ".json": "application/json",
+    ".png": "image/png",
+    ".txt": "text/plain"
+}
