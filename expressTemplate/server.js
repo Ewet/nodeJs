@@ -3,8 +3,8 @@
  */
 const path = require('path');
 const express = require('express');
-const app = express();
 const template = require('art-template')
+const app = express();
 // 设置模板的路径
 app.set('views',path.join(__dirname, 'views'))
 // 指定模板引擎的后缀名
