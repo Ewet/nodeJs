@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图书管理系统</title>
+    <link href='/www/style.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <h3>图书管理系统 <a href='/toAddBook'>添加图书</a></h3>
+    <table>
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>名称</th>
+                <th>作者</th>
+                <th>属性</th>
+                <th>描述</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{each list}}
+                <tr>
+                    <td>{{$value.id}}</td>
+                    <td>{{$value.name}}</td>
+                    <td>{{$value.author}}</td>
+                    <td>{{$value.category}}</td>
+                    <td>{{$value.desc}}</td>
+                    <td>
+                        <a href='/toEditBook?id={{$value.id}}'>修改</a>
+                        |
+                        <span onClick='delItem({{$value.id}})'>删除</span>
+                    </td>
+                </tr>
+                {{/each}}
+        </tbody>
+    </table>
+</body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script>
+    function delItem (id){
+        console.log(id)
+        $.ajax({
+            type:'delete',
+            url: '/delBook',
+            dataType: 'json',
+            data: {
+                id: id
+            },
+            success: (res) => {
+                console.log(res);
+                console.log(typeof res);
+                if(res === 1){
+                    alert('删除成功')
+                    location.reload();
+                }else {
+                    alert('删除失败')
+                }
+            }
+        })
+    }
+</script>
+</html>

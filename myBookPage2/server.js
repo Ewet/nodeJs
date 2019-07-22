@@ -10,11 +10,17 @@
  */
 
 const express = require('express');
-const template = require('art-template');
+const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
 const router = require('./router.js')
 
+function delItem () {
+    console.log('34434')
+}
+
+// 启动静态资源管理器
+app.use('/www', express.static('public'))
 
 // 设置模板的路径
 app.set('views',path.join(__dirname, 'views'))
