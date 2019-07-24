@@ -8,7 +8,7 @@
     <link href='/www/css/style.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <h3>图书管理系统 <a href='/toAddBook'>添加图书</a></h3>
+    <h3>图书管理系统 <a href='javascript:;'>添加图书</a></h3>
     <table>
         <thead>
             <tr>
@@ -35,9 +35,9 @@
             <td>{{$value.category}}</td>
             <td>{{$value.desc}}</td>
             <td>
-                <a href='/toEditBook?id={{$value.id}}'>修改</a>
+                <a href='javascript:;'>修改</a>
                 |
-                <span onClick='delItem({{$value.id}})'>删除</span>
+                <span>删除</span>
             </td>
         </tr>
     {{/each}}

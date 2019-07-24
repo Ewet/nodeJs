@@ -1,3 +1,4 @@
+// require 需要和node_module在同一个目录下；
 var mysql = require('mysql');
 
 exports.base = (sql, data, callback) => {
